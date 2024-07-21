@@ -1,0 +1,6 @@
+![sql1](https://github.com/17uite035/MySQLtask/assets/38652882/d2c5d5b1-c0be-4ddc-89b4-91f7aa05c08d)
+![sql2](https://github.com/17uite035/MySQLtask/assets/38652882/d47b3cb5-019c-44fb-8e9b-55b9463bf65f)
+![sql3](https://github.com/17uite035/MySQLtask/assets/38652882/3b7c1c2c-7ead-437b-958c-2a0b09044175)
+![sql4](https://github.com/17uite035/MySQLtask/assets/38652882/96ef4d65-4739-4586-beec-015733cfff0f)
+![sql5](https://github.com/17uite035/MySQLtask/assets/38652882/a814697f-a77c-44eb-ba6f-6ba82c4a8ba0)
+![sql6](https://github.com/17uite035/MySQLtask/assets/38652882/b991a9cf-6611-4b6e-898f-4723ba237fa2)

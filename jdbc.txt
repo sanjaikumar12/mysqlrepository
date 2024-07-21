@@ -1,0 +1,47 @@
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+
+public class JdbcInsertExample {
+    public static void main(String[] args) {
+        // Database connection settings
+        String url = "jdbc:mysql://localhost:3306/mydb";
+        String username = "root";
+        String password = "password";
+
+        // Load the MySQL JDBC driver
+        try {
+            Class.forName("com.mysql.cj.jdbc.Driver");
+        } catch (ClassNotFoundException e) {
+            System.out.println("Error loading MySQL JDBC driver: " + e.getMessage());
+            return;
+        }
+
+        // Create a connection to the database
+        try (Connection conn = DriverManager.getConnection(url, username, password)) {
+            // Create a prepared statement to insert data
+            String insertQuery = "INSERT INTO employees (empcode, empname, empage, esalary) VALUES (?, ?, ?, ?)";
+            try (PreparedStatement pstmt = conn.prepareStatement(insertQuery)) {
+                // Insert data
+                insertData(pstmt, 101, "Jenny", 25, 10000);
+                insertData(pstmt, 102, "Jacky", 30, 20000);
+                insertData(pstmt, 103, "Joe", 20, 40000);
+                insertData(pstmt, 104, "John", 70, 80000);
+                insertData(pstmt, 105, "Shameer", 25, 90000);
+            } catch (SQLException e) {
+                System.out.println("Error inserting data: " + e.getMessage());
+            }
+        } catch (SQLException e) {
+            System.out.println("Error connecting to database: " + e.getMessage());
+        }
+    }
+
+    private static void insertData(PreparedStatement pstmt, int empcode, String empname, int empage, int esalary) throws SQLException {
+        pstmt.setInt(1, empcode);
+        pstmt.setString(2, empname);
+        pstmt.setInt(3, empage);
+        pstmt.setInt(4, esalary);
+        pstmt.executeUpdate();
+    }
+}
